@@ -1,201 +1,88 @@
----
-title: Contact
-heading: Get in Touch with Our IT Experts
-description: We're here to help solve your business technology challenges.
-
-map:
-  latitude: -33.8688197
-  longitude: 151.2092955
-  address: "Sydney, New South Wales, Australia"
-  zoom: 11
----
-<div class="map" id="map"></div>
-
 <div class="contact-box">
-	<form action="https://formspree.io/f/xrbbbvrp" method="POST" class="contact-form">
-    <input type="text" name="name" id="name" placeholder="Enter your name..." required />
-    
-    <label for="email">Email Address</label>
-    <input type="email" name="email" id="email" placeholder="Enter your email..." required />
-    
-    <label for="phone">Phone Number</label>
-    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number..." />
-    
-    <label for="company">Company Name</label>
-    <input type="text" name="company" id="company" placeholder="Enter your company name..." />
-    
-    <label for="service">Service Interest</label>
-    <select name="service" id="service">
-        <option value="">Select a service...</option>
-        <option value="complete">Beyond the Cloud IT Complete</option>
-        <option value="direct">Beyond the Cloud IT Direct</option>
-        <option value="plus">Beyond the Cloud IT Plus</option>
-        <option value="other">Other Services</option>
-    </select>
-    
-    <label for="message">Message</label>
-    <textarea name="message" id="message" placeholder="Tell us about your IT needs..."></textarea>
+    <form id="contactForm" class="contact-form">
+        <input type="hidden" name="_to" value="support@BeyondTheCloudIT" />
+        <input type="text" name="_gotcha" style="display: none;">
 
-    <!-- Optional: Add a honeypot field to prevent spam -->
-    <input type="text" name="_gotcha" style="display: none">
-    
-    <!-- Optional: Customize the success page URL -->
-    <input type="hidden" name="_next" value="https://your-domain.com/contact-success/">
-    
-    <input type="submit" value="Send Message" />
-</form>
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name..." required />
 
-	<div class="contact-details">
-		<h3 class="editable">Hours of Operation</h3>
-		<p>24/7 Support Available for Managed Service Clients</p>
-		<p>Standard Business Hours:<br>
-		Monday - Friday: 8:30 AM - 5:30 PM AEST</p>
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email..." required />
 
-		<h3 class="editable">Contact Information</h3>
-		<p>Support Email: <a href="mailto:Support@BeyondTheCloudIT.com">Support@BeyondTheCloudIT.com</a></p>
-		<p>Sales Inquiries: <a href="mailto:Sales@BeyondTheCloudIT.com">Sales@BeyondTheCloudIT.com</a></p>
-		
-		<h3 class="editable">Location</h3>
-		<p>Sydney Metropolitan Area<br>
-		New South Wales, Australia</p>
-	</div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" placeholder="Enter your phone number..." />
+
+        <label for="company">Company Name</label>
+        <input type="text" name="company" id="company" placeholder="Enter your company name..." />
+
+        <label for="service">Service Interest</label>
+        <select name="service" id="service">
+            <option value="">Select a service...</option>
+            <option value="complete">Beyond the Cloud IT Complete</option>
+            <option value="direct">Beyond the Cloud IT Direct</option>
+            <option value="plus">Beyond the Cloud IT Plus</option>
+            <option value="other">Other Services</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Tell us about your IT needs..."></textarea>
+
+        <button type="submit" id="submitButton">Send Message</button>
+    </form>
+
+    <!-- Success message (hidden by default) -->
+    <div id="successMessage" style="display: none;">
+        <h2>Success</h2>
+        <p class="subtext">Your message is sent. We'll be in touch soon.</p>
+    </div>
+
+    <div class="contact-details">
+        <!-- Rest of your contact details -->
+    </div>
 </div>
 
-<script type="text/javascript">
-	window.mapData = {{ page.map | jsonify }};
-
-	function initMap() {
-		var myOptions = {
-			scrollwheel: false,
-			draggable: false,
-			panControl: false,
-			disableDefaultUI: true,
-			styles: [{
-				"featureType": "all",
-				"elementType": "labels.text.fill",
-				"stylers": [{
-					"saturation": 36
-				}, {
-					"color": "#000000"
-				}, {
-					"lightness": 40
-				}]
-			}, {
-				"featureType": "all",
-				"elementType": "labels.text.stroke",
-				"stylers": [{
-					"visibility": "on"
-				}, {
-					"color": "#000000"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "all",
-				"elementType": "labels.icon",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}, {
-					"weight": 1.2
-				}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 29
-				}, {
-					"weight": 0.2
-				}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 18
-				}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 19
-				}]
-			}, {
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#000000"
-				}, {
-					"lightness": 17
-				}]
-			}],
-			zoom: window.mapData.zoom,
-			maxZoom: window.mapData.zoom,
-			minZoom: window.mapData.zoom,
-			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map = new google.maps.Map(document.getElementById("map"), myOptions);
-		marker = new google.maps.Marker({
-			map: map,
-			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
-		});
-
-		google.maps.event.addDomListener(window, "resize", function () {
-			map.setCenter(myOptions.center);
-		});
-	}
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitButton = document.getElementById('submitButton');
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    // Disable submit button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('https://formspree.io/f/xrbbbvrp', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Hide the form
+            form.style.display = 'none';
+            // Show success message
+            successMessage.style.display = 'block';
+            // Optional: Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Optional: Reset form in case user navigates back
+            form.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+    }
+});
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
