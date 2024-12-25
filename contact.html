@@ -12,36 +12,38 @@ map:
 <div class="map" id="map"></div>
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="support@beyondtheict.com" />
-		<input type="text" name="_gotcha" style="display: none;">
+	<form action="https://formspree.io/f/xrbbbvrp" method="POST" class="contact-form">
+    <input type="text" name="name" id="name" placeholder="Enter your name..." required />
+    
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email..." required />
+    
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number..." />
+    
+    <label for="company">Company Name</label>
+    <input type="text" name="company" id="company" placeholder="Enter your company name..." />
+    
+    <label for="service">Service Interest</label>
+    <select name="service" id="service">
+        <option value="">Select a service...</option>
+        <option value="complete">Beyond the Cloud IT Complete</option>
+        <option value="direct">Beyond the Cloud IT Direct</option>
+        <option value="plus">Beyond the Cloud IT Plus</option>
+        <option value="other">Other Services</option>
+    </select>
+    
+    <label for="message">Message</label>
+    <textarea name="message" id="message" placeholder="Tell us about your IT needs..."></textarea>
 
-		<label for="name">Full Name</label>
-		<input type="text" name="name" id="name" placeholder="Enter your name..." />
-
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
-
-		<label for="phone">Phone Number</label>
-		<input type="tel" name="phone" id="phone" placeholder="Enter your phone number..." />
-
-		<label for="company">Company Name</label>
-		<input type="text" name="company" id="company" placeholder="Enter your company name..." />
-
-		<label for="service">Service Interest</label>
-		<select name="service" id="service">
-			<option value="">Select a service...</option>
-			<option value="complete">Beyond the Cloud IT Complete</option>
-			<option value="direct">Beyond the Cloud IT Direct</option>
-			<option value="plus">Beyond the Cloud IT Plus</option>
-			<option value="other">Other Services</option>
-		</select>
-
-		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Tell us about your IT needs..."></textarea>
-
-		<input type="submit" value="Send Message" />
-	</form>
+    <!-- Optional: Add a honeypot field to prevent spam -->
+    <input type="text" name="_gotcha" style="display: none">
+    
+    <!-- Optional: Customize the success page URL -->
+    <input type="hidden" name="_next" value="https://your-domain.com/contact-success/">
+    
+    <input type="submit" value="Send Message" />
+</form>
 
 	<div class="contact-details">
 		<h3 class="editable">Hours of Operation</h3>
