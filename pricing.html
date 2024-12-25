@@ -1,97 +1,125 @@
 ---
-title: Pricing
-heading: Find the perfect plan for your business
-description: All plans include our award winning sales optimization solution to track your sales in real time.
+title: IT Solutions Pricing
+heading: Flexible IT Solutions for Your Business
+description: Comprehensive managed IT service plans tailored to your business needs, with transparent pricing structures designed to scale with your growth.
 pricing_table:
-  - name: Basic
-    color: "#8e8e8e"
-    features:
-      - text: $25 per month
-        highlight: true
-      - text: Up to 5 users
-        highlight: false
-      - text: Basic lead scoring
-        highlight: false
-      - text: CRM
-        highlight: false
-      - text: Basic reporting
-        highlight: false
-      - text: Sales map
-        highlight: false
-    call_to_action:
-      link: http://mysite.com?plan=basic
-      text: Get started
-  - name: Pro
+  - name: Beyond the Cloud IT Complete
     color: "#4a4a4a"
     features:
-      - text: $99 per month
+      - text: Time & Material Billing
         highlight: true
-      - text: Everything in Basic
+      - text: On-demand IT support
         highlight: false
-      - text: Up to 25 users
+      - text: Hardware troubleshooting
         highlight: false
-      - text: Advanced lead scoring
+      - text: Software installation
         highlight: false
-      - text: Pipeline management
+      - text: Network support
         highlight: false
-      - text: Advanced reporting
+      - text: Security incident response
+        highlight: false
+      - text: Monthly IT health reports
         highlight: false
     call_to_action:
-      link: http://mysite.com?plan=pro
-      text: Get started
-  - name: Professional
+      link: "/contact"
+      text: Request Quote
+  - name: Beyond the Cloud IT Direct
+    color: "#2a5298"
+    features:
+      - text: Prepaid Block Hours
+        highlight: true
+      - text: Everything in Complete, plus
+        highlight: false
+      - text: Priority response
+        highlight: false
+      - text: Remote monitoring
+        highlight: false
+      - text: Quarterly IT strategy
+        highlight: false
+      - text: License management
+        highlight: false
+      - text: Help desk support
+        highlight: false
+    call_to_action:
+      link: "/contact"
+      text: Request Quote
+  - name: Beyond the Cloud IT Plus
     color: "#000000"
     features:
-      - text: $299 per month
+      - text: Fixed Monthly Rate
         highlight: true
-      - text: Everything in Basic and Pro
+      - text: Everything in Direct, plus
         highlight: false
-      - text: Up to 100 users
+      - text: 24/7 monitoring
         highlight: false
-      - text: Campaign builder
+      - text: Automated patching
         highlight: false
-      - text: Machine learning
+      - text: Security compliance
         highlight: false
-      - text: Calendar
+      - text: Dedicated manager
+        highlight: false
+      - text: Advanced security features
         highlight: false
     call_to_action:
-      link: http://mysite.com?plan=professional
-      text: Get started
+      link: "/contact"
+      text: Request Quote
 faq:
-  - question: What types of payment do you accept?
-    answer: Credit cards including MasterCard, Visa or American Express.
-  - question: Can I change my plan at a later time?
-    answer: Yes, you can upgrade and downgrade your plan at anytime.
-  - question: Do you offer pricing for nonprofit organizations?
-    answer: Yes, send us a message and we'll set you up on our nonprofit pricing.
-  - question: Questions?
-    answer: Contact us for any further questions at <a href="#">john@business.com</a>.
+  - question: How is pricing determined?
+    answer: We offer flexible pricing models based on your business needs, including time & material, prepaid blocks, and fixed monthly rates per computer or user. Contact us for a customized quote.
+  - question: What contract terms do you offer?
+    answer: We offer flexible contract terms including 12 and 24-month agreements, with prepaid credits valid for 12 months.
+  - question: Do you offer custom solutions for larger organizations?
+    answer: Yes, we provide custom enterprise solutions for organizations with 100+ users or computers. Contact us to discuss your specific requirements.
+  - question: What support hours do you offer?
+    answer: We provide standard business hours support, after-hours support, and weekend/holiday coverage with varying response times based on your service level.
+  - question: Questions about our services?
+    answer: Contact our team for a detailed consultation at <a href="#">sales@beyondtheict.com</a>.
 ---
 <div class="plans">
-	{% for plan in page.pricing_table %}
-		<ul class="plan">
-			<li style="background: {{ plan.color }}">
-				<h3>{{ plan.name }}</h3>
-			</li>
-			{% for feature in plan.features %}
-				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
-			{% endfor %}
+  {% for plan in page.pricing_table %}
+    <ul class="plan">
+      <li style="background: {{ plan.color }}">
+        <h3>{{ plan.name }}</h3>
+      </li>
+      {% for feature in plan.features %}
+        <li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
+      {% endfor %}
 
-			{% if plan.call_to_action %}
-				<li class="pricing-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
-			{% endif %}
-		</ul>
-	{% endfor %}
+      {% if plan.call_to_action %}
+        <li class="pricing-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
+      {% endif %}
+    </ul>
+  {% endfor %}
 </div>
 
+<section class="additional-info">
+  <div class="container">
+    <h2>Flexible Pricing Models</h2>
+    <div class="pricing-models">
+      <div class="model">
+        <h3>Time & Material</h3>
+        <p>Flexible pay-as-you-go support with standard, after-hours, and weekend rates</p>
+      </div>
+      <div class="model">
+        <h3>Prepaid Blocks</h3>
+        <p>Discounted hourly rates when purchasing blocks of support hours</p>
+      </div>
+      <div class="model">
+        <h3>Fixed Rate Plans</h3>
+        <p>Predictable monthly costs based on number of users or computers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% if page.faq %}
-	<h2>Pricing FAQ</h2>
-	<dl class="faq">
-		{% for item in page.faq %}
-			<div>
-				<dt>{{ item.question }}</dt>
-				<dd>{{ item.answer }}</dd>
-			</div>
-		{% endfor %}
-	</dl>
+  <h2>Pricing FAQ</h2>
+  <dl class="faq">
+    {% for item in page.faq %}
+      <div>
+        <dt>{{ item.question }}</dt>
+        <dd>{{ item.answer }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
 {% endif %}
