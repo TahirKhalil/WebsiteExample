@@ -1,20 +1,19 @@
 ---
 title: Contact
-heading: Get in touch today
-description: We'd love to help you improve your sales.
+heading: Get in Touch with Our IT Experts
+description: We're here to help solve your business technology challenges.
 
 map:
-  latitude: -45.8787605
-  longitude: 170.5027976
-  address: "1 George Street, Dunedin, New Zealand"
-  zoom: 13
+  latitude: -33.8688197
+  longitude: 151.2092955
+  address: "Sydney, New South Wales, Australia"
+  zoom: 11
 ---
 <div class="map" id="map"></div>
 
-
 <div class="contact-box">
 	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="support@example.com" />
+		<input type="hidden" name="_to" value="support@beyondtheict.com" />
 		<input type="text" name="_gotcha" style="display: none;">
 
 		<label for="name">Full Name</label>
@@ -23,18 +22,40 @@ map:
 		<label for="email">Email Address</label>
 		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
 
+		<label for="phone">Phone Number</label>
+		<input type="tel" name="phone" id="phone" placeholder="Enter your phone number..." />
+
+		<label for="company">Company Name</label>
+		<input type="text" name="company" id="company" placeholder="Enter your company name..." />
+
+		<label for="service">Service Interest</label>
+		<select name="service" id="service">
+			<option value="">Select a service...</option>
+			<option value="complete">Beyond the Cloud IT Complete</option>
+			<option value="direct">Beyond the Cloud IT Direct</option>
+			<option value="plus">Beyond the Cloud IT Plus</option>
+			<option value="other">Other Services</option>
+		</select>
+
 		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+		<textarea name="message" id="message" placeholder="Tell us about your IT needs..."></textarea>
 
 		<input type="submit" value="Send Message" />
 	</form>
 
 	<div class="contact-details">
-		<h3 class="editable">Address</h3>
-		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+		<h3 class="editable">Hours of Operation</h3>
+		<p>24/7 Support Available for Managed Service Clients</p>
+		<p>Standard Business Hours:<br>
+		Monday - Friday: 8:30 AM - 5:30 PM AEST</p>
 
-		<h3 class="editable">Email</h3>
-		<p><a href="mailto:support@example.com">support@example.com</a></p>
+		<h3 class="editable">Contact Information</h3>
+		<p>Support Email: <a href="mailto:support@beyondtheict.com">support@beyondtheict.com</a></p>
+		<p>Sales Inquiries: <a href="mailto:sales@beyondtheict.com">sales@beyondtheict.com</a></p>
+		
+		<h3 class="editable">Location</h3>
+		<p>Sydney Metropolitan Area<br>
+		New South Wales, Australia</p>
 	</div>
 </div>
 
